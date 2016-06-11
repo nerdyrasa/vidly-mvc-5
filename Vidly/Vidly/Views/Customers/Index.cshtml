@@ -1,4 +1,4 @@
-﻿@model Vidly.Models.Customer
+﻿@model IEnumerable<Vidly.Models.Customer>
 @{
     ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,11 +8,11 @@
 
 <p>Just checking to see that everything is hooked up correctly.</p>
 
-@if (string.IsNullOrWhiteSpace(Model.Name))
+@if (!Model.Any())
 {
     <p>We don't have any customers yet.</p>
 }
 else
 {
-    <p>@Model.Name</p>
+    <p>List customers here.</p>
 }
