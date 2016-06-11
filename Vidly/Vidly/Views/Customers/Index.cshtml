@@ -17,14 +17,19 @@ else
     <p>List customers here.</p>
     <table>
         <thead>
-            <tr>
-                <th>Name</th>
-                <th>Membership Type</th>
-            </tr>
-        </thead>
         <tr>
-            <td>Customer name goes here.</td>
-            <td>Membership type goes here.</td>
+            <th>Name</th>
+            <th>Membership Type</th>
         </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@customer.Name</td>
+                    <td>@customer.MembershipType.Id</td>
+                </tr>
+            }
+        </tbody>
     </table>
 }
