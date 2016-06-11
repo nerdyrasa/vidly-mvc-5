@@ -1,4 +1,4 @@
-﻿@model Vidly.Models.Movie
+﻿@model IEnumerable<Vidly.Models.Movie>
 @{
     ViewBag.Title = "Movies";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,5 +8,12 @@
 
 <p>Display movie to see if the basic MVC is working for Movie.</p>
 
-<p>Movie = @Model.Name</p>
+@if (!Model.Any())
+{
+    <p>No movies to display.</p>  
+}
+else
+{
+    <p>Display movies here.</p>
+}
 
