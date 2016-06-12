@@ -22,10 +22,15 @@ else
             </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>movie id will go here</td>
-            <td>movie name will go here</td>
-        </tr>
+        @foreach (var movie in Model)
+        {
+
+            <tr>
+                <td>@movie.Id</td>
+                <td>@movie.Name</td>
+
+            </tr>
+        }
         </tbody>
     </table>
 }
