@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
@@ -25,7 +26,7 @@ namespace Vidly.Controllers
         public ActionResult Index()
         {
             //get the movies from the database
-            IEnumerable<Movie> movies = _context.Movies.ToList();
+            IEnumerable<Movie> movies = _context.Movies.Include( m => m.Genre ).ToList();
 
 
             return View(movies);
@@ -34,7 +35,7 @@ namespace Vidly.Controllers
         public ActionResult Details(int id)
         {
 
-            var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
+            var movie = _context.Movies.Include( m => m.Genre ).SingleOrDefault(m => m.Id == id);
 
             if (movie == null)
                 return HttpNotFound();

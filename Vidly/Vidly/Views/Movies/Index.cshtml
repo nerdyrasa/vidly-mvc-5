@@ -6,8 +6,6 @@
 
 <h2>Movies</h2>
 
-<p>Display movie to see if the basic MVC is working for Movie.</p>
-
 @if (!Model.Any())
 {
     <p>No movies to display.</p>  
@@ -17,8 +15,8 @@ else
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>Movie Id</th>
                 <th>Movie Name</th>
+                <th>Movie Genre</th>
             </tr>
         </thead>
         <tbody>
@@ -26,8 +24,8 @@ else
         {
 
             <tr>
-                <td>@movie.Id</td>
-                <td>@Html.ActionLink(movie.Name, "Details", new { id = movie.Id}, null)</td>
+                <td>@Html.ActionLink(movie.Name, "Details", new {id = movie.Id}, null)</td>
+                <td>@movie.Genre.Name</td>
 
             </tr>
         }
