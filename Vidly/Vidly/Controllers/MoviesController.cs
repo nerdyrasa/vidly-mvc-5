@@ -36,6 +36,9 @@ namespace Vidly.Controllers
 
             var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
 
+            if (movie == null)
+                return HttpNotFound();
+
             return View(movie);
         }
     }
