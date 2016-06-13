@@ -14,7 +14,7 @@
 }
 else
 {
-    <table>
+    <table class="table table-bordered table-hover">
         <thead>
             <tr>
                 <th>Movie Id</th>
@@ -27,7 +27,7 @@ else
 
             <tr>
                 <td>@movie.Id</td>
-                <td>@Html.ActionLink(movie.Name, "Details", new { id = movie.Id})</td>
+                <td>@Html.ActionLink(movie.Name, "Details", new { id = movie.Id}, null)</td>
 
             </tr>
         }
