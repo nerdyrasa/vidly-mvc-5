@@ -192,6 +192,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
+    <Compile Include="Dtos\MovieDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -251,6 +252,10 @@
     <Compile Include="Migrations\201606131920246_PopulateGenreTableAgain.Designer.cs">
       <DependentUpon>201606131920246_PopulateGenreTableAgain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606161739285_UpdateCustomer.cs" />
+    <Compile Include="Migrations\201606161739285_UpdateCustomer.Designer.cs">
+      <DependentUpon>201606161739285_UpdateCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -258,12 +263,11 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
-    <Compile Include="Models\Min18IfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
-    <Compile Include="Models\MovieCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -380,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606131920246_PopulateGenreTableAgain.resx">
       <DependentUpon>201606131920246_PopulateGenreTableAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606161739285_UpdateCustomer.resx">
+      <DependentUpon>201606161739285_UpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
