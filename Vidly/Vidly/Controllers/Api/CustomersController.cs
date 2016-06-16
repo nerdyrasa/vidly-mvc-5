@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using AutoMapper;
+using Vidly.Dtos;
 using Vidly.Models;
 
 namespace Vidly.Controllers.Api
@@ -18,9 +20,10 @@ namespace Vidly.Controllers.Api
         }
 
         // GET /api/customers
-        public IEnumerable<Customer> GetCustomers()
+        public IEnumerable<CustomerDto> GetCustomers()
         {
-            return _context.Customers.ToList();
+            return _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
+                
         }
     }
 }
