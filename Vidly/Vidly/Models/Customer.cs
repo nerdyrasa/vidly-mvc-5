@@ -21,5 +21,7 @@ namespace Vidly.Models
         [Display(Name = "Date of Birth")]
        
         public DateTime? Birthdate { get; set; }
+
+        public string Address { get; set; }
     }
 }

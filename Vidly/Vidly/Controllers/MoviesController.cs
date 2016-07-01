@@ -101,5 +101,16 @@ namespace Vidly.Controllers
 
             return RedirectToAction("Index", "Movies");
         }
+
+//        [Route("movies/released/{year}/{month}")]
+        public ActionResult ByReleaseYear(int year)
+        {
+            return Content( "ByReleaseYear: " + year);
+        }
+
+        public ActionResult ByReleaseDate(int year, int month)
+        {
+            return Content("ByReleaseDate: " + year + "/" + month);
+        }
     }
 }
